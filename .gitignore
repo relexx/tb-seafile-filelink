@@ -16,3 +16,6 @@ Desktop.ini
 # Node (falls mal Tooling hinzukommt)
 node_modules/
 package-lock.json
+
+# AI
+.claude/

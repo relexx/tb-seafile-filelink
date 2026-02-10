@@ -1,0 +1,66 @@
+name: Build and Release XPI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read version from manifest.json
+        id: version
+        run: |
+          VERSION=$(jq -r '.version' manifest.json)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check if tag already exists
+        id: tag_check
+        run: |
+          if git ls-remote --tags origin "v${{ steps.version.outputs.version }}" | grep -q .; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate JSON
+        if: steps.tag_check.outputs.exists == 'false'
+        run: |
+          for f in manifest.json _locales/*/messages.json experiment_apis/loginManager/schema.json; do
+            jq empty "$f"
+            echo "  OK: $f"
+          done
+
+      - name: Build XPI
+        if: steps.tag_check.outputs.exists == 'false'
+        run: |
+          zip -r "tb-seafile-filelink-${{ steps.version.outputs.version }}.xpi" . \
+            -x '.git/*' \
+            -x '.gitignore' \
+            -x '.github/*' \
+            -x 'build.sh' \
+            -x 'README.md' \
+            -x 'LICENSE' \
+            -x '*.xpi' \
+            -x '.vscode/*' \
+            -x '.idea/*' \
+            -x '.claude/*' \
+            -x '.github/*' \
+            -x 'node_modules/*' \
+            -x '.DS_Store' \
+            -x 'Thumbs.db'
+
+      - name: Create Release
+        if: steps.tag_check.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          files: tb-seafile-filelink-${{ steps.version.outputs.version }}.xpi
+          generate_release_notes: true

@@ -5,7 +5,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OUTPUT="$SCRIPT_DIR/seafile-filelink.xpi"
+VERSION=$(python3 -c "import json; print(json.load(open('$SCRIPT_DIR/manifest.json'))['version'])")
+OUTPUT="$SCRIPT_DIR/tb-seafile-filelink-${VERSION}.xpi"
 
 # Colored output (if running in a terminal)
 if [ -t 1 ]; then
@@ -37,19 +38,22 @@ for f in manifest.json _locales/*/messages.json experiment_apis/loginManager/sch
   echo "  ✓ $f"
 done
 
-# Remove old XPI
-rm -f "$OUTPUT"
+# Remove old XPI files
+rm -f "$SCRIPT_DIR"/tb-seafile-filelink*.xpi
 
 # Create XPI
 cd "$SCRIPT_DIR"
 zip -r "$OUTPUT" . \
   -x '.git/*' \
   -x '.gitignore' \
+  -x '.github/*' \
   -x 'build.sh' \
   -x 'README.md' \
+  -x 'LICENSE' \
   -x '*.xpi' \
   -x '.vscode/*' \
   -x '.idea/*' \
+  -x '.claude/*' \
   -x 'node_modules/*' \
   -x '.DS_Store' \
   -x 'Thumbs.db'
