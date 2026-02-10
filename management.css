@@ -1,0 +1,206 @@
+/* Seafile FileLink Management UI */
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a2e;
+  --muted: #6c757d;
+  --border: #dee2e6;
+  --primary: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --success: #198754;
+  --success-hover: #157347;
+  --danger: #dc3545;
+  --warning-bg: #fff3cd;
+  --warning-border: #ffc107;
+  --success-bg: #d1e7dd;
+  --success-border: #198754;
+  --danger-bg: #f8d7da;
+  --danger-border: #dc3545;
+  --radius: 6px;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e2e;
+    --fg: #cdd6f4;
+    --muted: #9399b2;
+    --border: #45475a;
+    --primary: #89b4fa;
+    --primary-hover: #74c7ec;
+    --success: #a6e3a1;
+    --success-hover: #94e2d5;
+    --danger: #f38ba8;
+    --warning-bg: #45400a;
+    --warning-border: #f9e2af;
+    --success-bg: #1e3a2f;
+    --success-border: #a6e3a1;
+    --danger-bg: #3e1f28;
+    --danger-border: #f38ba8;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 13px;
+  color: var(--fg);
+  background: var(--bg);
+  padding: 12px;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 480px;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+fieldset:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+legend {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 3px;
+  font-size: 12px;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 13px;
+  font-family: var(--font);
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+}
+
+input[type="number"] {
+  max-width: 120px;
+}
+
+.hint {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-family: var(--font);
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.btn-success {
+  background: var(--success);
+  color: #fff;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: var(--success-hover);
+}
+
+.status {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.status.success {
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+}
+
+.status.error {
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+}
+
+.status.warning {
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.actions {
+  margin-top: 8px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

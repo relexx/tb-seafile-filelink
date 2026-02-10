@@ -1,0 +1,85 @@
+[
+  {
+    "namespace": "loginManager",
+    "description": "Access Thunderbird's built-in password manager (nsILoginManager) for secure credential storage.",
+    "functions": [
+      {
+        "name": "saveCredentials",
+        "type": "function",
+        "description": "Save credentials to Thunderbird's password manager under a specific realm.",
+        "async": true,
+        "parameters": [
+          {
+            "name": "hostname",
+            "type": "string",
+            "description": "The server hostname (used as origin, must be a valid URL)"
+          },
+          {
+            "name": "realm",
+            "type": "string",
+            "description": "The httpRealm to categorize the credential (e.g. 'Seafile FileLink', 'Seafile FileLink Token')"
+          },
+          {
+            "name": "username",
+            "type": "string",
+            "description": "The username or key identifier"
+          },
+          {
+            "name": "password",
+            "type": "string",
+            "description": "The secret value to store"
+          }
+        ]
+      },
+      {
+        "name": "getCredentials",
+        "type": "function",
+        "description": "Retrieve credentials from Thunderbird's password manager for a specific realm.",
+        "async": true,
+        "parameters": [
+          {
+            "name": "hostname",
+            "type": "string",
+            "description": "The server hostname (used as origin)"
+          },
+          {
+            "name": "realm",
+            "type": "string",
+            "description": "The httpRealm to look up"
+          }
+        ]
+      },
+      {
+        "name": "removeCredentials",
+        "type": "function",
+        "description": "Remove all credentials from Thunderbird's password manager for a specific hostname and realm.",
+        "async": true,
+        "parameters": [
+          {
+            "name": "hostname",
+            "type": "string",
+            "description": "The server hostname (used as origin)"
+          },
+          {
+            "name": "realm",
+            "type": "string",
+            "description": "The httpRealm to remove"
+          }
+        ]
+      },
+      {
+        "name": "removeAllForHost",
+        "type": "function",
+        "description": "Remove ALL credentials for a hostname across all Seafile FileLink realms. Used during account cleanup.",
+        "async": true,
+        "parameters": [
+          {
+            "name": "hostname",
+            "type": "string",
+            "description": "The server hostname (used as origin)"
+          }
+        ]
+      }
+    ]
+  }
+]

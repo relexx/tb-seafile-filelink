@@ -1,0 +1,227 @@
+{
+  "extensionName": {
+    "message": "Seafile FileLink",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "FileLink-Anbieter für Seafile – Große Anhänge in Seafile ablegen und als Download-Link versenden.",
+    "description": "Description of the extension"
+  },
+  "managementTitle": {
+    "message": "Seafile FileLink – Konfiguration"
+  },
+  "sectionConnection": {
+    "message": "Verbindung"
+  },
+  "labelServerUrl": {
+    "message": "Server-URL"
+  },
+  "hintServerUrl": {
+    "message": "Die vollständige URL Ihres Seafile-Servers"
+  },
+  "labelUsername": {
+    "message": "Benutzername / E-Mail"
+  },
+  "labelPassword": {
+    "message": "Passwort"
+  },
+  "hintPassword": {
+    "message": "Wird verschlüsselt im Thunderbird-Passwortspeicher abgelegt"
+  },
+  "labelOtp": {
+    "message": "2FA-Code (TOTP)"
+  },
+  "hintOtp": {
+    "message": "6-stelliger Code aus Ihrer Authenticator-App"
+  },
+  "btnTestConnection": {
+    "message": "Verbindung testen"
+  },
+  "sectionLibrary": {
+    "message": "Bibliothek & Upload"
+  },
+  "labelLibrary": {
+    "message": "Bibliothek (Library)"
+  },
+  "optSelectLibrary": {
+    "message": "-- Bibliothek wählen --"
+  },
+  "hintLibrary": {
+    "message": "Nur nicht-verschlüsselte Bibliotheken mit Schreibzugriff werden angezeigt"
+  },
+  "labelUploadDir": {
+    "message": "Upload-Ordner"
+  },
+  "hintUploadDir": {
+    "message": "Ordner wird automatisch erstellt, falls nicht vorhanden"
+  },
+  "sectionShareLink": {
+    "message": "Freigabe-Link Optionen"
+  },
+  "labelSharePassword": {
+    "message": "Link-Passwort (optional)"
+  },
+  "hintSharePassword": {
+    "message": "Empfänger benötigt dieses Passwort zum Herunterladen"
+  },
+  "labelExpireDays": {
+    "message": "Ablauf nach (Tage)"
+  },
+  "hintExpireDays": {
+    "message": "0 = kein Ablaufdatum"
+  },
+  "btnSave": {
+    "message": "Konfiguration speichern"
+  },
+  "statusTesting": {
+    "message": "Teste Verbindung…"
+  },
+  "statusConnectionOk": {
+    "message": "Verbunden als $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "statusConnected": {
+    "message": "Verbunden"
+  },
+  "status2faRequired": {
+    "message": "2FA-Code erforderlich – bitte eingeben und erneut testen"
+  },
+  "status2faInvalid": {
+    "message": "Ungültiger 2FA-Code – bitte erneut versuchen"
+  },
+  "statusSaving": {
+    "message": "Speichere…"
+  },
+  "statusSaved": {
+    "message": "Konfiguration gespeichert ✓"
+  },
+  "statusLoading": {
+    "message": "Bitte warten…"
+  },
+  "errorFillFields": {
+    "message": "Bitte alle Pflichtfelder ausfüllen"
+  },
+  "errorSelectLibrary": {
+    "message": "Bitte eine Bibliothek wählen"
+  },
+  "errorConnectionFailed": {
+    "message": "Verbindung fehlgeschlagen"
+  },
+  "errorSaveFailed": {
+    "message": "Speichern fehlgeschlagen"
+  },
+  "error2faRequired": {
+    "message": "Zwei-Faktor-Authentifizierung erforderlich. Bitte 2FA-Code eingeben."
+  },
+  "error2faInvalid": {
+    "message": "Ungültiger 2FA-Code."
+  },
+  "errorAuthFailed": {
+    "message": "Authentifizierung fehlgeschlagen (HTTP $STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorListRepos": {
+    "message": "Bibliotheken konnten nicht geladen werden."
+  },
+  "errorCreateDir": {
+    "message": "Ordner konnte nicht erstellt werden: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorUploadLink": {
+    "message": "Upload-Link konnte nicht abgerufen werden."
+  },
+  "errorUpload": {
+    "message": "Upload fehlgeschlagen (HTTP $STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorShareLink": {
+    "message": "Freigabe-Link konnte nicht erstellt werden (HTTP $STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNoConfig": {
+    "message": "Konto nicht konfiguriert. Bitte Einstellungen öffnen."
+  },
+  "errorNoCredentials": {
+    "message": "Keine Zugangsdaten gefunden. Bitte erneut konfigurieren."
+  },
+  "errorUploadGeneric": {
+    "message": "Upload fehlgeschlagen. Bitte Einstellungen prüfen."
+  },
+  "errorInvalidUrl": {
+    "message": "Ungültige Server-URL. Bitte mit https:// angeben."
+  },
+  "errorUrlEmpty": {
+    "message": "Server-URL darf nicht leer sein."
+  },
+  "errorUrlScheme": {
+    "message": "Nur HTTPS- oder HTTP-URLs werden unterstützt."
+  },
+  "errorUploadLinkUntrusted": {
+    "message": "Upload-Link verweist auf einen unbekannten Server."
+  },
+  "errorUploadLinkInvalid": {
+    "message": "Ungültiger Upload-Link vom Server erhalten."
+  },
+  "errorAccountInfo": {
+    "message": "Account-Informationen konnten nicht abgerufen werden."
+  },
+  "errorNoUsername": {
+    "message": "Bitte Benutzername eingeben."
+  },
+  "errorNoPassword": {
+    "message": "Bitte Passwort eingeben."
+  },
+  "errorNoRepo": {
+    "message": "Bitte eine Bibliothek auswählen."
+  },
+  "errorNoResponse": {
+    "message": "Keine Antwort vom Hintergrundprozess."
+  },
+  "errorNoAccountId": {
+    "message": "Keine Account-ID vorhanden."
+  },
+  "errorNoSeafileAccount": {
+    "message": "Kein Seafile-Account gefunden. Bitte Account in Thunderbird anlegen."
+  },
+  "warnHttpInsecure": {
+    "message": "HTTP-Verbindung (unverschlüsselt). HTTPS wird dringend empfohlen."
+  },
+  "legendConnection": {
+    "message": "Verbindung"
+  },
+  "legendLibrary": {
+    "message": "Bibliothek & Ordner"
+  },
+  "legendShare": {
+    "message": "Freigabe-Optionen"
+  },
+  "hintHttps": {
+    "message": "HTTPS wird dringend empfohlen."
+  },
+  "optionSelectRepo": {
+    "message": "— Bitte Verbindung testen —"
+  },
+  "optionNoRepos": {
+    "message": "Keine Bibliotheken verfügbar"
+  }
+}

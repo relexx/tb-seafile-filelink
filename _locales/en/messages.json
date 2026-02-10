@@ -1,0 +1,227 @@
+{
+  "extensionName": {
+    "message": "Seafile FileLink",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "FileLink provider for Seafile – Store large attachments in Seafile and send download links.",
+    "description": "Description of the extension"
+  },
+  "managementTitle": {
+    "message": "Seafile FileLink – Configuration"
+  },
+  "sectionConnection": {
+    "message": "Connection"
+  },
+  "labelServerUrl": {
+    "message": "Server URL"
+  },
+  "hintServerUrl": {
+    "message": "The full URL of your Seafile server"
+  },
+  "labelUsername": {
+    "message": "Username / Email"
+  },
+  "labelPassword": {
+    "message": "Password"
+  },
+  "hintPassword": {
+    "message": "Stored encrypted in Thunderbird's password manager"
+  },
+  "labelOtp": {
+    "message": "2FA Code (TOTP)"
+  },
+  "hintOtp": {
+    "message": "6-digit code from your authenticator app"
+  },
+  "btnTestConnection": {
+    "message": "Test Connection"
+  },
+  "sectionLibrary": {
+    "message": "Library & Upload"
+  },
+  "labelLibrary": {
+    "message": "Library"
+  },
+  "optSelectLibrary": {
+    "message": "-- Select a library --"
+  },
+  "hintLibrary": {
+    "message": "Only non-encrypted libraries with write access are shown"
+  },
+  "labelUploadDir": {
+    "message": "Upload Folder"
+  },
+  "hintUploadDir": {
+    "message": "Folder will be created automatically if it doesn't exist"
+  },
+  "sectionShareLink": {
+    "message": "Share Link Options"
+  },
+  "labelSharePassword": {
+    "message": "Link Password (optional)"
+  },
+  "hintSharePassword": {
+    "message": "Recipient needs this password to download"
+  },
+  "labelExpireDays": {
+    "message": "Expire after (days)"
+  },
+  "hintExpireDays": {
+    "message": "0 = no expiration"
+  },
+  "btnSave": {
+    "message": "Save Configuration"
+  },
+  "statusTesting": {
+    "message": "Testing connection…"
+  },
+  "statusConnectionOk": {
+    "message": "Connected as $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1"
+      }
+    }
+  },
+  "statusConnected": {
+    "message": "Connected"
+  },
+  "status2faRequired": {
+    "message": "2FA code required – please enter and test again"
+  },
+  "status2faInvalid": {
+    "message": "Invalid 2FA code – please try again"
+  },
+  "statusSaving": {
+    "message": "Saving…"
+  },
+  "statusSaved": {
+    "message": "Configuration saved ✓"
+  },
+  "statusLoading": {
+    "message": "Please wait…"
+  },
+  "errorFillFields": {
+    "message": "Please fill in all required fields"
+  },
+  "errorSelectLibrary": {
+    "message": "Please select a library"
+  },
+  "errorConnectionFailed": {
+    "message": "Connection failed"
+  },
+  "errorSaveFailed": {
+    "message": "Save failed"
+  },
+  "error2faRequired": {
+    "message": "Two-factor authentication required. Please enter 2FA code."
+  },
+  "error2faInvalid": {
+    "message": "Invalid 2FA code."
+  },
+  "errorAuthFailed": {
+    "message": "Authentication failed (HTTP $STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorListRepos": {
+    "message": "Could not load libraries."
+  },
+  "errorCreateDir": {
+    "message": "Could not create folder: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorUploadLink": {
+    "message": "Could not get upload link."
+  },
+  "errorUpload": {
+    "message": "Upload failed (HTTP $STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorShareLink": {
+    "message": "Could not create share link (HTTP $STATUS$)",
+    "placeholders": {
+      "status": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorNoConfig": {
+    "message": "Account not configured. Please open settings."
+  },
+  "errorNoCredentials": {
+    "message": "No credentials found. Please reconfigure."
+  },
+  "errorUploadGeneric": {
+    "message": "Upload failed. Please check settings."
+  },
+  "errorInvalidUrl": {
+    "message": "Invalid server URL. Please use https://."
+  },
+  "errorUrlEmpty": {
+    "message": "Server URL must not be empty."
+  },
+  "errorUrlScheme": {
+    "message": "Only HTTPS or HTTP URLs are supported."
+  },
+  "errorUploadLinkUntrusted": {
+    "message": "Upload link points to an unknown server."
+  },
+  "errorUploadLinkInvalid": {
+    "message": "Invalid upload link received from server."
+  },
+  "errorAccountInfo": {
+    "message": "Could not retrieve account information."
+  },
+  "errorNoUsername": {
+    "message": "Please enter a username."
+  },
+  "errorNoPassword": {
+    "message": "Please enter a password."
+  },
+  "errorNoRepo": {
+    "message": "Please select a library."
+  },
+  "errorNoResponse": {
+    "message": "No response from background process."
+  },
+  "errorNoAccountId": {
+    "message": "No account ID available."
+  },
+  "errorNoSeafileAccount": {
+    "message": "No Seafile account found. Please create an account in Thunderbird."
+  },
+  "warnHttpInsecure": {
+    "message": "HTTP connection (unencrypted). HTTPS is strongly recommended."
+  },
+  "legendConnection": {
+    "message": "Connection"
+  },
+  "legendLibrary": {
+    "message": "Library & Folder"
+  },
+  "legendShare": {
+    "message": "Share Options"
+  },
+  "hintHttps": {
+    "message": "HTTPS is strongly recommended."
+  },
+  "optionSelectRepo": {
+    "message": "— Please test connection first —"
+  },
+  "optionNoRepos": {
+    "message": "No libraries available"
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="management.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2 data-i18n="managementTitle">Seafile FileLink Configuration</h2>
+
+    <!-- Server & Credentials -->
+    <fieldset id="fieldsetConnection">
+      <legend data-i18n="legendConnection">Connection</legend>
+
+      <div class="form-group">
+        <label for="serverUrl" data-i18n="labelServerUrl">Server URL</label>
+        <input type="url" id="serverUrl" placeholder="https://cloud.example.com" required autocomplete="off"
+          spellcheck="false" />
+        <small class="hint" data-i18n="hintHttps">HTTPS is strongly recommended.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="username" data-i18n="labelUsername">Username / Email</label>
+        <input type="email" id="username" required autocomplete="off" spellcheck="false" />
+      </div>
+
+      <div class="form-group">
+        <label for="password" data-i18n="labelPassword">Password</label>
+        <input type="password" id="password" required autocomplete="off" />
+      </div>
+
+      <!-- 2FA (hidden by default, shown only on demand) -->
+      <div id="otpGroup" class="form-group hidden">
+        <label for="otpToken" data-i18n="labelOtp">2FA Code (TOTP)</label>
+        <input type="text" id="otpToken" inputmode="numeric" pattern="\d{6}" maxlength="6"
+          autocomplete="one-time-code" />
+        <small class="hint" data-i18n="hintOtp">6-digit code from your authenticator app.</small>
+      </div>
+
+      <button type="button" id="btnTestConnection" class="btn btn-primary">
+        <span data-i18n="btnTestConnection">Test Connection</span>
+      </button>
+
+      <div id="connectionStatus" class="status hidden" role="status" aria-live="polite"></div>
+    </fieldset>
+
+    <!-- Library & Folder -->
+    <fieldset id="fieldsetLibrary" disabled>
+      <legend data-i18n="legendLibrary">Library & Folder</legend>
+
+      <div class="form-group">
+        <label for="repoSelect" data-i18n="labelRepo">Library</label>
+        <select id="repoSelect">
+          <option value="" data-i18n="optionSelectRepo">— Please test connection first —</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="uploadDir" data-i18n="labelUploadDir">Upload Folder</label>
+        <input type="text" id="uploadDir" value="/Thunderbird-Attachments" autocomplete="off" spellcheck="false" />
+      </div>
+    </fieldset>
+
+    <!-- Share link options -->
+    <fieldset id="fieldsetShare" disabled>
+      <legend data-i18n="legendShare">Share Options</legend>
+
+      <div class="form-group">
+        <label for="shareLinkPassword" data-i18n="labelSharePassword">Link Password (optional)</label>
+        <input type="password" id="shareLinkPassword" autocomplete="new-password" />
+        <small class="hint" data-i18n="hintSharePassword">Protects the download link with a password.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="shareLinkExpireDays" data-i18n="labelExpireDays">Expiry (days, 0 = unlimited)</label>
+        <input type="number" id="shareLinkExpireDays" min="0" max="365" value="0" />
+      </div>
+    </fieldset>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button type="button" id="btnSave" class="btn btn-success" disabled>
+        <span data-i18n="btnSave">Save</span>
+      </button>
+    </div>
+
+    <div id="saveStatus" class="status hidden" role="status" aria-live="polite"></div>
+  </div>
+
+  <script src="management.js"></script>
+</body>
+
+</html>

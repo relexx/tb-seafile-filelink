@@ -1,0 +1,18 @@
+# Build output
+*.xpi
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (falls mal Tooling hinzukommt)
+node_modules/
+package-lock.json
