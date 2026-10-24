@@ -65,23 +65,13 @@ async function findLoginsForRealm(lm, origin, safeRealm) {
   // Build the match criteria as a property bag
   // searchLoginsAsync expects a JS object with matching fields
   try {
-    const matchData = Cc["@mozilla.org/hash-property-bag;1"]
-      .createInstance(Ci.nsIWritablePropertyBag2);
-    matchData.setPropertyAsAString("origin", origin);
-    matchData.setPropertyAsAString("httpRealm", safeRealm);
-
-    const logins = await lm.searchLoginsAsync(matchData);
+    const logins = await lm.searchLoginsAsync({ origin: origin, httpRealm: safeRealm });
     // searchLoginsAsync returns a Promise resolving to an array
     return logins;
   } catch (e) {
     // Fallback: synchronous searchLogins (deprecated but still present in TB 128)
     try {
-      const matchData = Cc["@mozilla.org/hash-property-bag;1"]
-        .createInstance(Ci.nsIWritablePropertyBag2);
-      matchData.setPropertyAsAString("origin", origin);
-      matchData.setPropertyAsAString("httpRealm", safeRealm);
-
-      return lm.searchLogins(matchData);
+      return lm.searchLogins({ origin: origin, httpRealm: safeRealm });
     } catch (e2) {
       // Last resort fallback: old findLogins API
       return lm.findLogins(origin, null, safeRealm);
@@ -112,7 +102,7 @@ var loginManager = class extends ExtensionCommon.ExtensionAPI {
           const existing = await findLoginsForRealm(lm, origin, safeRealm);
           for (const login of existing) {
             if (login.username === username) {
-              lm.removeLogin(login);
+              await lm.removeLoginAsync(login);
             }
           }
 
@@ -175,7 +165,7 @@ var loginManager = class extends ExtensionCommon.ExtensionAPI {
           for (const realm of ALLOWED_REALMS) {
             const logins = await findLoginsForRealm(lm, origin, realm);
             for (const login of logins) {
-              lm.removeLogin(login);
+              await lm.removeLoginAsync(login);
             }
           }
           return true;
